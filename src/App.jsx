@@ -66,9 +66,9 @@ function Nav({ scrolled, showFloat }) {
         borderBottom: '1px solid rgba(255,107,26,0.2)',
         transition: 'all 0.4s',
       }}>
-        <a href="#hero" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.1rem', fontWeight: 700, color: '#fff', letterSpacing: '0.04em', textDecoration: 'none' }}>
-          T<span style={{ background: 'linear-gradient(135deg,#FF6B1A,#FFB347)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>.</span>onel
-        </a>
+        <a href="#hero" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ textDecoration: 'none' }}>
+  <img src="/logo.png" alt="Tonel" style={{ height: 48, objectFit: 'contain' }} />
+</a>
         <ul style={{ display: 'flex', gap: '0.5rem', listStyle: 'none', alignItems: 'center' }}>
           {[['services','Services'],['story','Notre histoire'],['contact','Contact']].map(([id,label]) => (
             <li key={id}>
@@ -297,7 +297,7 @@ function Devis() {
   const [sent, setSent] = useState(false);
   const set = k => e => setForm(f => ({ ...f, [k]: e.target.value }));
 
-  const inputStyle = { width: '100%', padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.06)', border: '1.5px solid rgba(255,107,26,0.2)', color: '#fff', fontFamily: "'Outfit',sans-serif", fontSize: '0.88rem', fontWeight: 300, outline: 'none', borderRadius: 8, transition: 'all 0.2s' };
+  const inputStyle = { width: '100%', padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.06)', border: '1.5px solid rgba(255,107,26,0.2)', color: '#080808', fontFamily: "'Outfit',sans-serif", fontSize: '0.88rem', fontWeight: 300, outline: 'none', borderRadius: 8, transition: 'all 0.2s' };
 
   return (
     <section id="devis" style={{ padding: '8rem 5vw', background: '#fff' }}>
@@ -322,7 +322,7 @@ function Devis() {
                 <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: 28, height: 28, stroke: '#120D1F' }}><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <h4 style={{ fontFamily: "'Playfair Display',serif", fontSize: '1.8rem', fontWeight: 700, color: '#fff' }}>Demande envoyée !</h4>
-              <p style={{ fontSize: '0.9rem', color: 'rgba(255,248,242,0.6)', fontWeight: 300 }}>Merci pour votre confiance. Axel ou Tony vous contactera sous 24h.</p>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(255,248,242,0.6)', fontWeight: 300 }}>Merci pour votre confiance. Nous vous contacterons sous 24h pour échanger sur votre projet.</p>
             </div>
           ) : (
             <form onSubmit={e => { e.preventDefault(); setSent(true); }} style={{ display: 'flex', flexDirection: 'column', gap: '1.4rem', position: 'relative', zIndex: 1 }}>
