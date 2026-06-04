@@ -67,7 +67,7 @@ function Nav({ scrolled, showFloat }) {
         transition: 'all 0.4s',
       }}>
         <a href="#hero" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ textDecoration: 'none' }}>
-  <img src="/logo.png" alt="Tonel" style={{ height: 140, objectFit: 'contain' }} />
+  <img src="/logo.png" alt="Tonel" style={{ height: 120, objectFit: 'contain' }} />
 </a>
         <ul style={{ display: 'flex', gap: '0.5rem', listStyle: 'none', alignItems: 'center' }}>
           {[['services','Services'],['story','Notre histoire'],['contact','Contact']].map(([id,label]) => (
@@ -297,7 +297,7 @@ function Devis() {
   const [sent, setSent] = useState(false);
   const set = k => e => setForm(f => ({ ...f, [k]: e.target.value }));
 
-  const inputStyle = { width: '100%', padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.06)', border: '1.5px solid rgba(255,107,26,0.2)', color: '#080808', fontFamily: "'Outfit',sans-serif", fontSize: '0.88rem', fontWeight: 300, outline: 'none', borderRadius: 8, transition: 'all 0.2s' };
+  const inputStyle = { width: '100%', padding: '0.8rem 1rem', background: 'rgba(255,255,255,0.06)', border: '1.5px solid rgba(255,107,26,0.2)', color: '#fff', caretColor: '#fff', };
 
   return (
     <section id="devis" style={{ padding: '8rem 5vw', background: '#fff' }}>
@@ -421,7 +421,9 @@ function Footer() {
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(ellipse 60% 40% at 50% 100%,rgba(255,107,26,0.08) 0%,transparent 60%)', pointerEvents: 'none' }} />
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', paddingBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.07)', marginBottom: '2rem', position: 'relative', zIndex: 1 }}>
         <div>
-          <a href="#hero" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ fontFamily: "'Playfair Display',serif", fontSize: '2.1rem', fontWeight: 700, color: '#fff', textDecoration: 'none', display: 'block', marginBottom: '0.8rem' }}>T<span style={{ background: 'linear-gradient(135deg,#FF6B1A,#FFB347)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>.</span>onel</a>
+          <a href="#hero" onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} style={{ display: 'block', marginBottom: '0.8rem' }}>
+  <img src="/logo.png" alt="Tonel" style={{ height: 56, objectFit: 'contain' }} />
+</a>
           <div style={{ fontSize: '0.82rem', color: 'rgba(255,248,242,0.35)', fontStyle: 'italic', fontFamily: "'Playfair Display',serif" }}>L'excellence digitale, à votre portée.</div>
         </div>
         <nav style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -467,6 +469,8 @@ const globalCSS = `
   @keyframes scrollDown { 0%,100% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(12px); opacity: 0; } }
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+  select option { background: #120D1F !important; color: #fff !important; }
+input, select, textarea { color: #fff !important; }
 `;
 
 /* ── APP ── */
